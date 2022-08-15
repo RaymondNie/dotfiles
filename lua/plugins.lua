@@ -29,6 +29,7 @@ require('packer').startup(function(use)
     use 'kyazdani42/nvim-web-devicons'
     use 'vim-airline/vim-airline'
     use 'vim-airline/vim-airline-themes'
+    use 'glepnir/dashboard-nvim'
 
     -- Misc
     use 'tpope/vim-surround'
@@ -36,6 +37,7 @@ require('packer').startup(function(use)
     use 'alvan/vim-closetag'
     use 'preservim/nerdcommenter'
 end)
+
 
 -- LSP
 require ('confs.nvim-lsp-installer')
@@ -46,3 +48,5 @@ require ('confs.lspsaga')
 
 require ('confs.nvim-tree')
 require ('confs.bufferline')
+
+require('confs.dashboard')

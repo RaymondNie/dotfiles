@@ -37,6 +37,19 @@ nmap('<leader>nn', '<cmd>bn<cr>')
 nmap('<leader>pp', '<cmd>bp<cr>')
 nmap('<leader>p' , '"+p')
 
+nmap('<leader>1', ':1b<cr>' )
+nmap('<leader>2', ':2b<cr>' )
+nmap('<leader>3', ':3b<cr>' )
+nmap('<leader>4', ':4b<cr>' )
+nmap('<leader>5', ':5b<cr>' )
+nmap('<leader>6', ':6b<cr>' )
+nmap('<leader>7', ':7b<cr>' )
+nmap('<leader>8', ':8b<cr>' )
+nmap('<leader>9', ':9b<cr>' )
+nmap('<leader>0', ':0b<cr>' )
+
+nmap('<leader>gd', '<cmd>lua vim.lsp.buf.definition()<cr>' )
+
 -- Telescope
 nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
 nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
@@ -44,7 +57,17 @@ nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
 -- Harpoon
 nmap('<leader>ha', '<cmd>lua require("harpoon.mark").add_file()<cr>')
 nmap('<leader>hm', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>')
-nmap('<leader>hf', ':lua require("harpoon.ui").nav_file()<left>' )
+
+nmap('<leader>h1', ':lua require("harpoon.ui").nav_file(1)<cr>' )
+nmap('<leader>h2', ':lua require("harpoon.ui").nav_file(2)<cr>' )
+nmap('<leader>h3', ':lua require("harpoon.ui").nav_file(3)<cr>' )
+nmap('<leader>h4', ':lua require("harpoon.ui").nav_file(4)<cr>' )
+nmap('<leader>h5', ':lua require("harpoon.ui").nav_file(5)<cr>' )
+nmap('<leader>h6', ':lua require("harpoon.ui").nav_file(6)<cr>' )
+nmap('<leader>h7', ':lua require("harpoon.ui").nav_file(7)<cr>' )
+nmap('<leader>h8', ':lua require("harpoon.ui").nav_file(8)<cr>' )
+nmap('<leader>h9', ':lua require("harpoon.ui").nav_file(9)<cr>' )
+nmap('<leader>h0', ':lua require("harpoon.ui").nav_file(0)<cr>' )
 
 -- NvimTree
 nmap('<leader>to', '<cmd>NvimTreeOpen<cr>')
