@@ -28,11 +28,7 @@ end
 
 vim.g.mapleader = " "
 
-nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
-nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
-nmap('<leader>ha', '<cmd>lua require("harpoon.mark").add_file()<cr>')
-nmap('<leader>hm', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>')
-nmap('<leader>hf', ':lua require("harpoon.ui").nav_file()<left>' )
+-- Base Mappings
 nmap('<leader>l' , '<C-w>l')
 nmap('<leader>j' , '<C-w>j')
 nmap('<leader>k' , '<C-w>k')
@@ -40,14 +36,23 @@ nmap('<leader>h' , '<C-w>h')
 nmap('<leader>nn', '<cmd>bn<cr>')
 nmap('<leader>pp', '<cmd>bp<cr>')
 nmap('<leader>p' , '"+p')
+
+-- Telescope
+nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
+nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
+
+-- Harpoon
+nmap('<leader>ha', '<cmd>lua require("harpoon.mark").add_file()<cr>')
+nmap('<leader>hm', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>')
+nmap('<leader>hf', ':lua require("harpoon.ui").nav_file()<left>' )
+
+-- NvimTree
 nmap('<leader>to', '<cmd>NvimTreeOpen<cr>')
 nmap('<leader>tf', '<cmd>NvimTreeFocus<cr>')
 nmap('<leader>ut', '<cmd>UndotreeToggle<cr>')
 
+-- LspSaga
 vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
-vim.keymap.set("n", "<leader>cf", action.code_action, { silent = true })
+vim.keymap.set("n", "<leader>ca", action.code_action, { silent = true })
 vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
-
-vim.g.NERDCreateDefaultMappings = 1
-

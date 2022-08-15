@@ -3,10 +3,13 @@ vim.cmd [[packadd packer.nvim]]
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    use 'sainnhe/everforest'
+    -- Navigation
     use 'kyazdani42/nvim-tree.lua'
-    use 'tpope/vim-surround'
     use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+    use 'nvim-lua/plenary.nvim'
+    use 'nvim-telescope/telescope.nvim'
+    use 'ThePrimeagen/harpoon'
+    use 'mbbill/undotree'
 
     -- LSP
     use 'williamboman/nvim-lsp-installer'
@@ -19,21 +22,19 @@ require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use 'glepnir/lspsaga.nvim'
 
-    use {
-        "glepnir/lspsaga.nvim",
-    }
-
+    -- Themes/UI
+    use 'sainnhe/everforest'
     use 'kyazdani42/nvim-web-devicons'
+    use 'vim-airline/vim-airline'
+    use 'vim-airline/vim-airline-themes'
 
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
-
+    -- Misc
+    use 'tpope/vim-surround'
     use 'tpope/vim-fugitive'
-    use 'ThePrimeagen/harpoon'
     use 'alvan/vim-closetag'
     use 'preservim/nerdcommenter'
-    use 'mbbill/undotree'
 end)
 
 -- LSP
