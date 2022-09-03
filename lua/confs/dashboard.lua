@@ -19,7 +19,7 @@ db.custom_header = {
 
 db.custom_center = {
     {
-        icon = '  ',
+        icon = '   ',
         desc = 'Find  File     ',
         action = 'Telescope find_files find_command=rg,--hidden,--files',
     },

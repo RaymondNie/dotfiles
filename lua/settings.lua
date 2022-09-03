@@ -5,13 +5,13 @@ vim.opt.relativenumber = true
 vim.opt.hlsearch = false
 vim.opt.hidden = true
 vim.opt.errorbells = false
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.nu = true
-vim.opt.wrap = true
+vim.opt.wrap = false
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
@@ -34,14 +34,14 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 -- Plugins
-vim.g.NERDCreateDefaultMappings = 0
+vim.g.NERDCreateDefaultMappings = 1
 vim.g.airline_powerline_fonts = 1
 vim.g.closetag_filenames='*.html,*.tsx,*.jsx'
 
 -- Theme
 vim.g.everforest_background = 'hard'
 vim.opt.encoding = 'utf-8'
-vim.cmd('colorscheme everforest')
+vim.cmd('colorscheme nord')
 vim.cmd('filetype plugin on')
 vim.cmd('set statusline+=%F')
 

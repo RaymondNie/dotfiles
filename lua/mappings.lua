@@ -53,6 +53,7 @@ nmap('<leader>gd', '<cmd>lua vim.lsp.buf.definition()<cr>' )
 -- Telescope
 nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
 nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
+nmap('<leader>cf', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
 
 -- Harpoon
 nmap('<leader>ha', '<cmd>lua require("harpoon.mark").add_file()<cr>')
@@ -69,13 +70,29 @@ nmap('<leader>h8', ':lua require("harpoon.ui").nav_file(8)<cr>' )
 nmap('<leader>h9', ':lua require("harpoon.ui").nav_file(9)<cr>' )
 nmap('<leader>h0', ':lua require("harpoon.ui").nav_file(0)<cr>' )
 
--- NvimTree
+-- nvimtree
 nmap('<leader>to', '<cmd>NvimTreeOpen<cr>')
 nmap('<leader>tf', '<cmd>NvimTreeFocus<cr>')
+nmap('<leader>tb', '<cmd>NvimTreeFindFile<cr>')
 nmap('<leader>ut', '<cmd>UndotreeToggle<cr>')
 
 -- LspSaga
-vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
+vim.keymap.set("n", "<leader>gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 vim.keymap.set("n", "<leader>ca", action.code_action, { silent = true })
-vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+vim.keymap.set("n", "<leader>K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+
+-- Debugger
+vim.fn.sign_define('DapsBreakpoint', {text='x', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapsStopped', {text='o', texthl='', linehl='', numhl=''})
+
+nmap('<leader>db', ':lua require("dap").toggle_breakpoint()<cr>')
+nmap('<S-k>', ':lua require("dap").step_out()<cr>')
+nmap('<S-l>', ':lua require("dap").step_into()<cr>')
+nmap('<S-j>', ':lua require("dap").step_over()<cr>')
+nmap('<leader>dc', ':lua require("dap").continue()<cr>')
+nmap('<leader>dr', ':lua require("dap").repl.open()<cr>')
+nmap('<leader>dt', ':lua require("dapui").toggle()<cr>')
+
+-- Lazygit/Floaterm
+nmap('<leader>g', ':FloatermNew lazygit<cr>')
